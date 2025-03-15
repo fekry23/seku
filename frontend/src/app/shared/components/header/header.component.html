@@ -1,0 +1,32 @@
+<nav class="header" [ngClass]="{'mobile' : isMobile}">
+    <!-- Desktop Menu -->
+    <div class="header__container" *ngIf="!isMobile">
+        <div class="header__container-left">
+            <ul class="header__container-left-list">
+                <li class="header__container-left-list-item logo">SEKU</li>
+                <li class="header__container-left-list-item">Home</li>
+                <li class="header__container-left-list-item">Find Services</li>
+            </ul>
+        </div>
+        <div class="header__container-right">
+            <p class="header__container-right-text">Login</p>
+            <button class="header_container-right-btn">Sign up</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+     <div class="header__container-mobile" *ngIf="isMobile">
+        <div class="header__container-mobile-left">
+            <ul class="header__container-mobile-left-list">
+                <li class="header__container-mobile-left-list-item"><mat-icon class="hamburger">menu</mat-icon></li>
+                <li class="header__container-mobile-left-list-item logo">SEKU</li>
+            </ul>
+        </div>
+        <div class="header__container-mobile-right">
+            <ul class="header__container-mobile-right-list">
+                <li class="header__container-mobile-right-list-item">Sign up</li>
+                <li class="header__container-mobile-right-list-item"><mat-icon class="search">search</mat-icon></li>
+            </ul>
+        </div>        
+     </div>
+</nav>

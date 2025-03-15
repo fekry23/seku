@@ -1,1 +1,82 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+html {
+    @include mat.theme((color: (theme-type: light,
+                primary: mat.$azure-palette,
+                tertiary: mat.$blue-palette,
+            ),
+            typography: Roboto,
+            density: 0,
+        ));
+}
+
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #8bca84;
+    --secondary-color: #5bb450;
+    --hover-color: #72bf6a;
+    --background-color: #e5e5e5;
+    --text-color: #2d2d2d;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+button {
+    background-color: var(--secondary-color);
+    border: 1px solid transparent;
+    border-radius: 24px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 8px 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+
+    &:focus-visible {
+        box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+        transition: box-shadow .2s;
+    }
+
+    &:active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+        transform: scale(.96);
+    }
+
+    &:disabled {
+        border-color: #DDDDDD;
+        color: #DDDDDD;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
