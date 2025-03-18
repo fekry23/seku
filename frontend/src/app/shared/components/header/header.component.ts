@@ -24,7 +24,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.responsive.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
-      this.menuToggle.emit(false);
+
+      // Close mobile nav-bar when it's not in mobile view
+      if (!this.isMobile) {
+        this.isMenuOpen = false;
+        this.menuToggle.emit(false);
+      }
     });
   }
 
