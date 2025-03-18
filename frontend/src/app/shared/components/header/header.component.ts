@@ -1,28 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { HamburgerBtnComponent } from '../hamburger-btn/hamburger-btn.component';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, HamburgerBtnComponent, MatSidenavModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
-
   isMobile: boolean = false;
+  isMenuOpen: boolean = false;
+
+  @Output() menuToggle = new EventEmitter<boolean>();
 
   constructor(private responsive: BreakpointObserver) {
 
   }
 
   ngOnInit() {
-
     this.responsive.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
+      this.menuToggle.emit(false);
     });
-
   }
 
+  handleMenuToggle(isMenuOpen: boolean) {
+    this.isMenuOpen = isMenuOpen;
+    this.menuToggle.emit(this.isMenuOpen);
+  }
 }

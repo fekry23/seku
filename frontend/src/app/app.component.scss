@@ -1,0 +1,57 @@
+@use '@angular/material' as mat;
+
+.sidenav-container {
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Fixes full-height sidenav */
+    mat-sidenav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%; // Set a reasonable width instead of full width
+        border-radius: 0;
+        background-color: white;
+    }
+
+    /* Side Navigation List */
+    .sidenav-lists {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Menu Items */
+    .items {
+        padding: 16px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:active {
+            color: var(--hover-color);
+        }
+    }
+
+    /* Signup Button */
+    .sidenav-button-container {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 20px;
+        border-top: 1px solid #ccc; // Added border at the top
+        background-color: white; // Ensure it blends well with the sidenav
+    }
+
+    .sidenav-button-container button {
+        width: 100%;
+        border-radius: 12px;
+        transition: background 0.3s ease;
+    }
+}
