@@ -5,11 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
+    RouterOutlet,
+    RouterLink,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,

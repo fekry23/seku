@@ -3,9 +3,9 @@
     <div class="header__container" *ngIf="!isMobile">
         <div class="header__container-left">
             <ul class="header__container-left-list">
-                <li class="header__container-left-list-item logo">SEKU</li>
-                <li class="header__container-left-list-item">Home</li>
-                <li class="header__container-left-list-item">Find Services</li>
+                <li class="header__container-left-list-item logo" [routerLink]="['/home']">SEKU</li>
+                <li class="header__container-left-list-item" [routerLink]="['/home']">Home</li>
+                <li class="header__container-left-list-item" [routerLink]="['/services']">Find Services</li>
             </ul>
         </div>
         <div class="header__container-right">

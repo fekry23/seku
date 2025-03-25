@@ -1,11 +1,13 @@
 <app-header (menuToggle)="handleMenuToggle($event)"></app-header>
 
+<router-outlet></router-outlet>
+
 <mat-sidenav-container *ngIf="isMobile" class="sidenav-container" [hasBackdrop]="true">
     <!-- Side Navigation -->
     <mat-sidenav mode="side" [opened]="isMenuOpen">
         <ul class="sidenav-lists">
-            <li class="items">Home</li>
-            <li class="items">Find Service</li>
+            <li class="items" [routerLink]="['/home']">Home</li>
+            <li class="items" [routerLink]="['/services']">Find Service</li>
         </ul>
         <div class="sidenav-button-container">
             <button>Sign up</button>

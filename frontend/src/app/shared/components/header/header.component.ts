@@ -4,10 +4,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HamburgerBtnComponent } from '../hamburger-btn/hamburger-btn.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, MatIconModule, HamburgerBtnComponent, MatSidenavModule],
+  imports: [CommonModule, MatIconModule, HamburgerBtnComponent, MatSidenavModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
