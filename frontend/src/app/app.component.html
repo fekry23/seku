@@ -2,7 +2,7 @@
 
 <router-outlet></router-outlet>
 
-<mat-sidenav-container *ngIf="isMobile" class="sidenav-container" [hasBackdrop]="true">
+<mat-sidenav-container *ngIf="isMobile" class="sidenav-container" [hasBackdrop]="true" [class.opened]="isMenuOpen">
     <!-- Side Navigation -->
     <mat-sidenav mode="side" [opened]="isMenuOpen">
         <ul class="sidenav-lists">

@@ -1,10 +1,20 @@
 @use '@angular/material' as mat;
 
 .sidenav-container {
-    height: calc(100% - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: none;
+
+    &.opened {
+        height: calc(100% - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        z-index: 1100;
+        background: transparent;
+    }
 
     /* Fixes full-height sidenav */
     mat-sidenav {
