@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { FloatingSearchBarComponent } from '../../shared/components/floating-search-bar/floating-search-bar.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, FloatingSearchBarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,11 +1,8 @@
 .header {
     display: block;
-    padding: 15px 34px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-bottom: 1px solid rgba(214, 214, 214, 0.979);
-
-    &.mobile {
-        padding: 14px 12px;
-    }
 
     &__container {
         display: flex;

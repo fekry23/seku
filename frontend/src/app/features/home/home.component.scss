@@ -24,7 +24,8 @@
             @media only screen and (max-width: 1024px) {
                 display: flex;
                 flex-direction: column;
-                padding: 40px 20px;
+                padding-top: 40px;
+                padding-bottom: 40px;
                 gap: 12px;
             }
 
@@ -124,6 +125,18 @@
                     color: var(--primary-color);
                     border: 2px solid var(--primary-color);
                 }
+            }
+        }
+    }
+
+    &__content-1 {
+        &-floating-search-bar-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -45px;
+
+            @media (max-width: 1024px) {
+                margin-top: auto;
             }
         }
     }

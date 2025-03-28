@@ -1,0 +1,99 @@
+.floating-search-bar__container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 5fr 3fr 1fr;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.floating-search-bar__search-container {
+    display: flex;
+    align-items: center;
+    background: #0f93000f;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    min-width: 100px;
+
+    &.location {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    &:focus-within {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-icon {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #333;
+        }
+
+        mat-icon {
+            font-size: 24px;
+        }
+    }
+
+    input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 8px;
+        font-size: 0.9em;
+        color: #333;
+        background: transparent;
+
+        &.search {
+            min-width: 400px;
+        }
+
+        &.location {
+            min-width: 200px;
+        }
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+    .floating-search-bar__container {
+        display: flex;
+        flex-direction: column; // Stack items vertically on smaller screens
+        gap: 10px;
+        width: 100vw;
+    }
+
+    .floating-search-bar__search-container {
+        width: 100%;
+    }
+
+    input {
+        min-width: 100px !important;
+        width: 100%;
+
+        &.location {
+            min-width: 100px;
+        }
+    }
+
+    .floating-search-bar__search-button {
+        width: 100%; // Make button full-width on mobile
+        padding: 12px;
+    }
+}

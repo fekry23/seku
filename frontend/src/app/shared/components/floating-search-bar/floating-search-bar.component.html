@@ -1,0 +1,23 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    <div class="floating-search-bar__container">
+
+        <!-- Keyword Search -->
+        <div class="floating-search-bar__search-container">
+            <button class="search-icon" disabled>
+                <mat-icon>search</mat-icon>
+            </button>
+            <input class="search" type="text" placeholder="Service Title, Categories, or Keywords"
+                formControlName="searchTerm" />
+        </div>
+
+        <!-- Location Search -->
+        <div class="floating-search-bar__search-container location">
+            <button class="search-icon" disabled>
+                <mat-icon>location_pin</mat-icon>
+            </button>
+            <input class="location" type="text" placeholder="City, State or Zip Code" formControlName="location" />
+        </div>
+
+        <button class="floating-search-bar__search-button" type="submit">Search</button>
+    </div>
+</form>
