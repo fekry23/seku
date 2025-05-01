@@ -1,0 +1,19 @@
+<div class="service-individual-card">
+    <div class="card-left">
+        <ng-container *ngIf="imageExists; else fallback">
+            <img [src]="imageUrl" alt="{{ name }}" class="card-image" (error)="onImageError()" />
+        </ng-container>
+        <ng-template #fallback>
+            <div class="avatar-fallback" [style.background-color]="avatarColor">
+                {{ getInitials(name) }}
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="card-right">
+        <h2 class="card-name">{{ name }}</h2>
+        <p class="card-desc">{{ description }}</p>
+        <p class="card-location">Location: {{ location }}</p>
+        <p class="card-rating">Rating: {{ rating }}</p>
+    </div>
+</div>
